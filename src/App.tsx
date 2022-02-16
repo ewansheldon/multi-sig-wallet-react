@@ -1,24 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {Button, Message} from "semantic-ui-react";
 
 function App() {
+  const account = "0x324235";
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="App-header">
+        <h1>Multi Sig Wallet</h1>
+        <div>Account: {account}</div>
+
+        <Message warning>Metamask is not connected</Message>
+        <Button color="green">Connect to metamask</Button>
+      </div>
     </div>
   );
 }
