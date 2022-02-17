@@ -24,8 +24,9 @@ export function subscribeToAccount(
     try {
       const accounts = await web3.eth.getAccounts();
       callback(null, accounts[0]);
-    } catch (e) {
-      callback(e, null);
+    } catch (error) {
+      // @ts-ignore
+      callback(error, null);
     }
   }, 1000);
 
