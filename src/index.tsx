@@ -6,13 +6,20 @@ import {
   Provider as Web3Provider,
   Updater as Web3Updater
 } from "./contexts/Web3"
+import {
+  Provider as MultiSigWalletProvider,
+  Updater as MultiSigWalletUpdater
+} from "./contexts/MultiSigWallet";
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
     <React.StrictMode>
       <Web3Provider value="">
-        <App/>
-        <Web3Updater/>
+        <MultiSigWalletProvider>
+          <App/>
+          <Web3Updater/>
+          <MultiSigWalletUpdater/>
+        </MultiSigWalletProvider>
       </Web3Provider>
     </React.StrictMode>,
     document.getElementById('root')
